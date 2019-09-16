@@ -1,4 +1,4 @@
-                                 
+
 #include <Arduino.h>
 #include <libmaple/pwr.h>
 #include <libmaple/bkp.h>
@@ -13,122 +13,129 @@
 #include "receipt.h"
 
 void Request_Access_Network(void);
-void Data_Communication_with_Gateway(void);
+void Data_Communication_with_Gateway(void);//与网关的数据通信
 void Sleep(void);
-void Key_Reset_LoRa_Parameter(void);
+void Key_Reset_LoRa_Parameter(void);//按键重置lora参数
 
-unsigned char g_SN_Code[9] = {0x00}; //Defualt SN code is 0.
+unsigned char g_SN_Code[9] = { 0x00 }; //Defualt SN code is 0.
 
 /*----------Function statement----------*/
 void Sleep(void);
 /*--------------------------------------*/
 
 /****************Set Up*******************/
-void setup() 
+void setup()
 {
-  afio_cfg_debug_ports(AFIO_DEBUG_SW_ONLY);
+	afio_cfg_debug_ports(AFIO_DEBUG_SW_ONLY);
 
-  Serial.begin(9600);         //DEBUG Serial baud
-  LoRa_MHL9LF.BaudRate(9600);    //LoRa SoftwareSerial baud
-  RS485_Serial.begin(9600);  //ModBus SoftwareSerial baud
-  bkp_init(); //Initialize backup register.
+	Serial.begin(9600);         //DEBUG Serial baud
+	LoRa_MHL9LF.BaudRate(9600);    //LoRa SoftwareSerial baud
+	RS485_Serial.begin(9600);  //ModBus SoftwareSerial baud
+	bkp_init(); //Initialize backup register.初始化备份寄存器
 
-  Some_Peripheral.Peripheral_GPIO_Config();   
-  LoRa_MHL9LF.LoRa_GPIO_Config();   
-  RS485_GPIO_Config();  //RS485 GPIO configuration
-  EEPROM_Operation.EEPROM_GPIO_Config();
-  LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);
-  delay(1000);
-  LoRa_Command_Analysis.Receive_LoRa_Cmd();
+	Some_Peripheral.Peripheral_GPIO_Config(); //设置了USB，LED，按键，电源输入的pinMode
+	LoRa_MHL9LF.LoRa_GPIO_Config();//对LORA的引脚进行了配置
+	RS485_GPIO_Config();  //RS485 GPIO configuration
+	EEPROM_Operation.EEPROM_GPIO_Config();//eeprom操作
+	LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);//设置为透传模式
+	delay(1000);
+	LoRa_Command_Analysis.Receive_LoRa_Cmd();//LORA接收指令
 
-  USB_ON; //Turn on the USB enable
-  delay(10);
+	USB_ON; //Turn on the USB enable
+	delay(10);
 
-#if SOFT_HARD_VERSION
-  Vertion.Save_Software_version(0x00, 0x01);
-  Vertion.Save_hardware_version(0x00, 0x01);
+#if SOFT_HARD_VERSION	//软硬件版本
+	Vertion.Save_Software_version(0x00, 0x01);//存储软件版本
+	Vertion.Save_hardware_version(0x00, 0x01);//存储硬件版本
 #endif
 
-  Key_Reset_LoRa_Parameter();
+	Key_Reset_LoRa_Parameter();//按键重置lora参数
 
-  if (Some_Peripheral.Get_Voltage() >= 3000){
+	if (Some_Peripheral.Get_Voltage() >= 3000)//得到电池电压，大于3V才工作 
+	{
 
-  //Initialize LoRa parameter.
-  if (LoRa_Para_Config.Verify_LoRa_Config_Flag() == false){
-    LoRa_MHL9LF.Rewrite_ID();
-    LoRa_MHL9LF.Parameter_Init();
-    LoRa_MHL9LF.IsReset(true);
-    LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);
-    LoRa_Command_Analysis.Receive_LoRa_Cmd();
-    LoRa_Para_Config.Save_LoRa_Config_Flag();
-  }
+		//Initialize LoRa parameter.
+		if (LoRa_Para_Config.Verify_LoRa_Config_Flag() == false)
+		{
+			LoRa_MHL9LF.Rewrite_ID();//lora重新写入ID
+			LoRa_MHL9LF.Parameter_Init();//LORA参数初始化
+			LoRa_MHL9LF.IsReset(true);//重启lora
+			LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);//设置为透传模式
+			LoRa_Command_Analysis.Receive_LoRa_Cmd();//LORA接收信息
+			LoRa_Para_Config.Save_LoRa_Config_Flag();//存储LORA的设置标志
+		}
 
-    SN.Clear_SN_Access_Network_Flag();
-    Request_Access_Network();
+		SN.Clear_SN_Access_Network_Flag();//清除SN接入网标志
+		Request_Access_Network();//请求访问网络
 
-    while (SN.Self_Check(g_SN_Code) == false){
-      LED_SELF_CHECK_ERROR;
-      Serial.println("Verify SN code ERROR, try to Retrieving SN code...");
-      Message_Receipt.Request_Device_SN_and_Channel();
-      delay(1000);
-      LoRa_Command_Analysis.Receive_LoRa_Cmd();
-      delay(3000);
-    }
-    Serial.println("SN self_check success...");
-    LED_RUNNING;
+		while (SN.Self_Check(g_SN_Code) == false)
+		{
+			LED_SELF_CHECK_ERROR;//
+			Serial.println("Verify SN code ERROR, try to Retrieving SN code...");//验证SN代码错误，尝试检索SN代码…
+			Message_Receipt.Request_Device_SN_and_Channel();//请求设备SN和路数
+			delay(1000);
+			LoRa_Command_Analysis.Receive_LoRa_Cmd();//
+			delay(3000);
+		}
+		Serial.println("SN self_check success...");//SN自检成功
+		LED_RUNNING;
 
-    Data_Communication_with_Gateway();
-  }else{
-    Serial.println("The battery voltage is too low !!!");
-  }
+		Data_Communication_with_Gateway();//与网关的数据通信
+	}
+	else
+	{
+		Serial.println("The battery voltage is too low !!!");//电池电压低
+	}
 
-  Private_RTC.Set_Alarm();
+	Private_RTC.Set_Alarm();//设置RTC闹钟
 }
 
-void loop() 
+void loop()
 {
-  Sleep();
+	Sleep();
 }
 
 /*
  @brief   : 检测是否已经注册到服务器成功，如果没有注册，则配置相关参数为默认参数，然后注册到服务器。
-            没有注册成功，红灯1每隔500ms闪烁。
-            Checks whether registration with the server was successful, and if not, 
-            configures the relevant parameters as default parameters and registers with the server.
-            Failing registration, red light flashes every 500ms.
+			没有注册成功，红灯1每隔500ms闪烁。
+			Checks whether registration with the server was successful, and if not,
+			configures the relevant parameters as default parameters and registers with the server.
+			Failing registration, red light flashes every 500ms.
  @para    : None
  @return  : None
  */
 void Request_Access_Network(void)
 {
-  if (SN.Verify_SN_Access_Network_Flag() == false){
-    g_Access_Network_Flag = false;
+	if (SN.Verify_SN_Access_Network_Flag() == false) {
+		g_Access_Network_Flag = false;
 
-    if (SN.Save_SN_Code(g_SN_Code) && SN.Save_BKP_SN_Code(g_SN_Code))
-      Serial.println("Write SN success...");
+		if (SN.Save_SN_Code(g_SN_Code) && SN.Save_BKP_SN_Code(g_SN_Code))
+			Serial.println("Write SN success...");
 
-    if(Control_Info.Clear_Area_Number() && Control_Info.Clear_Group_Number())
-      Serial.println("Already Clear area number and grouop number...");
+		if (Control_Info.Clear_Area_Number() && Control_Info.Clear_Group_Number())
+			Serial.println("Already Clear area number and grouop number...");
 
-    unsigned char Default_WorkGroup[5] = {0x01, 0x00, 0x00, 0x00, 0x00};
-    if(Control_Info.Save_Group_Number(Default_WorkGroup))
-      Serial.println("Save gourp number success...");
+		unsigned char Default_WorkGroup[5] = { 0x01, 0x00, 0x00, 0x00, 0x00 };
+		if (Control_Info.Save_Group_Number(Default_WorkGroup))
+			Serial.println("Save gourp number success...");
 
-   LED_NO_REGISTER;
-  }
-  while (SN.Verify_SN_Access_Network_Flag() == false){
+		LED_NO_REGISTER;
+	}
+	while (SN.Verify_SN_Access_Network_Flag() == false) {
 
-    if (digitalRead(K1) == LOW){
-      delay(5000);
-      if (digitalRead(K1) == LOW){
-        Message_Receipt.Report_General_Parameter();
+		if (digitalRead(K1) == LOW)
+		{
+			delay(5000);
+			if (digitalRead(K1) == LOW)
+			{
+				Message_Receipt.Report_General_Parameter();
 
-        while (digitalRead(K1) == LOW);
-      }
-    }
-    LoRa_Command_Analysis.Receive_LoRa_Cmd();
-  } 
-  g_Access_Network_Flag = true;
+				while (digitalRead(K1) == LOW);
+			}
+		}
+		LoRa_Command_Analysis.Receive_LoRa_Cmd();
+	}
+	g_Access_Network_Flag = true;//接入网标志
 }
 
 /*
@@ -138,25 +145,27 @@ void Request_Access_Network(void)
  */
 void Data_Communication_with_Gateway(void)
 {
-  unsigned char Get_Para_num = 0;
-  unsigned long wait_time = millis();
+	unsigned char Get_Para_num = 0;
+	unsigned long wait_time = millis();
 
-  do {
-      if (g_Get_Para_Flag == false){ //If it don't receive a message from the gateway.
-        Message_Receipt.Send_Sensor_Data(); //Send sensor data to gateway again.
-        Get_Para_num++;
-      }else
-        break; //If receive acquisition parameter, break loop.
+	do {
+		if (g_Get_Para_Flag == false) 
+		{ //If it don't receive a message from the gateway.
+			Message_Receipt.Send_Sensor_Data(); //Send sensor data to gateway again.再次发送传感器数据到网关
+			Get_Para_num++;
+		}
+		else
+			break; //If receive acquisition parameter, break loop.
 
-      while ((millis() < (wait_time + 10000)) && g_Get_Para_Flag == false)  //waiting to receive acquisition parameter.
-        LoRa_Command_Analysis.Receive_LoRa_Cmd(); //waiting to receive acquisition parameter.
-    
-      wait_time = millis();
+		while ((millis() < (wait_time + 10000)) && g_Get_Para_Flag == false)  //waiting to receive acquisition parameter.
+			LoRa_Command_Analysis.Receive_LoRa_Cmd(); //waiting to receive acquisition parameter.等待接收采集参数。
 
-  }while (Get_Para_num < 3);
+		wait_time = millis();
 
-  if (Get_Para_num == 3) //If it don't receive message three times.
-    Serial.println("No parameter were received !!!");
+	} while (Get_Para_num < 3);
+
+	if (Get_Para_num == 3) //If it don't receive message three times.
+		Serial.println("No parameter were received !!!");//没有接收到参数
 }
 
 /*
@@ -166,32 +175,36 @@ void Data_Communication_with_Gateway(void)
  */
 void Sleep(void)
 {
-  Serial.println("Enter Sleep>>>>>>");
-  Some_Peripheral.Stop_LED();
-  PWR_485_OFF;
-  LORA_PWR_OFF;
-  USB_OFF;
+	Serial.println("Enter Sleep>>>>>>");
+	Some_Peripheral.Stop_LED();
+	PWR_485_OFF;
+	LORA_PWR_OFF;
+	USB_OFF;
 
-  PWR_WakeUpPinCmd(ENABLE);//使能唤醒引脚，默认PA0
-  PWR_ClearFlag(PWR_FLAG_WU);
-  PWR_EnterSTANDBYMode();//进入待机
+	PWR_WakeUpPinCmd(ENABLE);//使能唤醒引脚，默认PA0
+	PWR_ClearFlag(PWR_FLAG_WU);
+	PWR_EnterSTANDBYMode();//进入待机
 }
 
 void Key_Reset_LoRa_Parameter(void)
 {
-  if (digitalRead(K1) == LOW){
-      delay(100);
-      if (digitalRead(K1) == LOW){
-        //Some_Peripheral.Key_Buzz(600);
-        delay(5000);
-        if (digitalRead(K2) == LOW){
-          delay(100);
-          if (digitalRead(K2) == LOW){
-            //Some_Peripheral.Key_Buzz(600);
-            LoRa_Para_Config.Clear_LoRa_Config_Flag();
-            Serial.println("Clear LoRa configuration flag SUCCESS... <Key_Reset_LoRa_Parameter>");
-          }
-        }
-      }
-    }
+	if (digitalRead(K1) == LOW)
+	{
+		delay(100);
+		if (digitalRead(K1) == LOW)
+		{
+			//Some_Peripheral.Key_Buzz(600);
+			delay(5000);
+			if (digitalRead(K2) == LOW)
+			{
+				delay(100);
+				if (digitalRead(K2) == LOW)
+				{
+					//Some_Peripheral.Key_Buzz(600);
+					LoRa_Para_Config.Clear_LoRa_Config_Flag();
+					Serial.println("Clear LoRa configuration flag SUCCESS... <Key_Reset_LoRa_Parameter>");
+				}
+			}
+		}
+	}
 }

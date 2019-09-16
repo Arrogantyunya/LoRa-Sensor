@@ -66,5 +66,4 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32_genericSTM32F103C\Debug\Private_RTC.h \
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32_genericSTM32F103C\Debug\User_Clock.h \
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32_genericSTM32F103C\Debug\private_sensor.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32_genericSTM32F103C\Debug\receipt.h \
- d:\vs2017\common7\ide\extensions\ed2mmpmr.3jk\Micro\ Platforms\default\debuggers\VM_DBG/VM_DBG.h
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.7\stm32_genericSTM32F103C\Debug\receipt.h
