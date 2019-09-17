@@ -1,0 +1,20 @@
+LORA传感器的代码细读：
+1.初始化串口、LORA、RS485的波特率
+2.初始化备份寄存器
+3.设置USB使能引脚，LED的红绿引脚，按键引脚，模拟量（电压）输入引脚的pinMode
+4.设置LORA的相关引脚的pinMode以及设置相关引脚的高低电平
+5.设置RS485的使能引脚的pinMode以及设置RS485的使能引脚的高低电平
+6.设置EEPROM的使能（唤醒）引脚的pinMode，设置为高电平（高电平不允许写入），进入I2C的初始化
+7.设置LORA为透传模式
+8.LORA接收指令函数LoRa_Command_Analysis.Receive_LoRa_Cmd()判断帧尾，进入接收数据分析函数Receive_Data_Analysis();
+9.接收数据分析函数Receive_Data_Analysis()将数据的帧头解出，然后进入不同的函数
+{
+	Query_Current_Work_Para();//工作para:查询当前工作参数
+	Set_Group_Number();//设置工作组:设置工作组编号
+	Set_SN_Area_Channel();//SN_区域_路数:设置SN，区域，路数
+	Detailed_Work_Status();//工作状态:详细的工作状态
+
+	Working_Limit_Command();//工作时间限制:工作限制命令
+}
+10.查询工作参数Query_Current_Work_Para()中，如果g_Access_Network_Flag == false，则return。
+然后验证帧的有效性，Verify_Frame_Validity(4, 23, true, false)
