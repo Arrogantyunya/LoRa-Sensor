@@ -373,6 +373,7 @@ bool LoRa::LoRa_AT(unsigned char *data_buffer, bool is_query, char *cmd, char *p
                 LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);
                 return true; 
                 break;
+	case Invalid: LoRa_MHL9LF.Mode(PASS_THROUGH_MODE); break;
 
     default     : LoRa_MHL9LF.Mode(PASS_THROUGH_MODE); break;
   }

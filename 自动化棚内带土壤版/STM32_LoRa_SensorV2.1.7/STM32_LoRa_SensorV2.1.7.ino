@@ -33,9 +33,9 @@ void setup()
 	RS485_Serial.begin(9600);  //ModBus SoftwareSerial baud
 	bkp_init(); //Initialize backup register.初始化备份寄存器
 
-	Some_Peripheral.Peripheral_GPIO_Config(); //设置了USB，LED，按键，电源输入的pinMode
-	LoRa_MHL9LF.LoRa_GPIO_Config();//对LORA的引脚进行了配置
-	RS485_GPIO_Config();  //RS485 GPIO configuration
+	Some_Peripheral.Peripheral_GPIO_Config(); //设置USB使能引脚，LED的红绿引脚，按键引脚，模拟量（电压）输入引脚的pinMode
+	LoRa_MHL9LF.LoRa_GPIO_Config();//设置LORA的相关引脚的pinMode以及设置相关引脚的高低电平
+	RS485_GPIO_Config();//设置RS485的使能引脚的pinMode以及设置RS485的使能引脚的高低电平
 	EEPROM_Operation.EEPROM_GPIO_Config();//eeprom操作
 	LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);//设置为透传模式
 	delay(1000);

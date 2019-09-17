@@ -57,9 +57,9 @@ bool g_Get_Para_Flag = false; //waiting to receive acquisition parameter.
  */
 void Command_Analysis::Receive_LoRa_Cmd(void)
 {
-	unsigned char End_num = 0;  //Frame tail number.
-	bool End_num_flag = false;  //Number of endings received complete flag bits.
-	bool Receive_end_flag = false;  //Correct flag at end of frame.
+	unsigned char End_num = 0;  //Frame tail number.帧尾数量
+	bool End_num_flag = false;  //Number of endings received complete flag bits.接收到完整标志位的结束数。
+	bool Receive_end_flag = false;  //Correct flag at end of frame.正确的标志在帧的末尾
 	g_Receive_Length = 0;
 
 	while (LoRa_Serial.available() > 0)
@@ -93,15 +93,15 @@ void Command_Analysis::Receive_LoRa_Cmd(void)
 			End_num = 0;
 			End_num_flag = false;
 			Receive_end_flag = true;
-			Serial.println("Get frame end... <Receive_LoRa_Cmd>");
+			Serial.println("Get frame end... <Receive_LoRa_Cmd>");//得到帧尾……<接收LORA指令 >
 		}
 	}
 
 	if (Receive_end_flag == true)
 	{
-		Serial.println("Parsing LoRa command... <Receive_LoRa_Cmd>");
+		Serial.println("Parsing LoRa command... <Receive_LoRa_Cmd>");//解析LORA命令……<接收LORA指令>
 		Receive_end_flag = false;
-		Receive_Data_Analysis();
+		Receive_Data_Analysis();//接收数据分析函数
 		g_Receive_Length = 0;
 	}
 	else
@@ -222,10 +222,10 @@ bool Command_Analysis::Verify_Work_Group(void)
 /*
  @brief   : 验证接收的指令CRC8校验、设备类型码、区域号、工作组是否合法。
 			可以通过形参决定是否屏蔽验证区域号和工作组。
- @para    : verify_data_base_addr : Verify CRC8 data base address.
-			verify_data_len : Verify CRC8 data length.
-			area_flag : Whether to mask the validation area number.
-			group_flag: Whether to mask the validation workgroup number.
+ @para    : verify_data_base_addr : Verify CRC8 data base address验证CRC8数据库地址.
+			verify_data_len : Verify CRC8 data length验证CRC8数据长度.
+			area_flag : Whether to mask the validation area number是否屏蔽验证区域号.
+			group_flag: Whether to mask the validation workgroup number是否屏蔽验证工作组号.
  @return  : true or false.
  */
 bool Command_Analysis::Verify_Frame_Validity(unsigned char verify_data_base_addr, unsigned char verify_data_len, bool area_flag = true, bool group_flag = true)
@@ -245,21 +245,25 @@ bool Command_Analysis::Verify_Frame_Validity(unsigned char verify_data_base_addr
 				else 
 				{
 					Serial.println("Not this device group number... <Verify_Frame_Validity>");
+					//不是这个设备组号…<验证框架有效性>
 				}
 			}
 			else
 			{
 				Serial.println("Not this device area number... <Verify_Frame_Validity>");
+				//不是这个设备区域号…<验证框架有效性>
 			}
 		}
 		else 
 		{
 			Serial.println("Device type ID ERROR! <Verify_Frame_Validity>");
+			//设备类型ID错误!<验证框架有效性>
 		}
 	}
 	else 
 	{
 		Serial.println("CRC8 ERROR! <Verify_Frame_Validity>");
+		//CRC8错误!<验证框架有效性>
 	}
 	return false;
 }
@@ -270,16 +274,18 @@ bool Command_Analysis::Verify_Frame_Validity(unsigned char verify_data_base_addr
  @para    : None
  @return  : None
  */
-void Command_Analysis::Receive_Data_Analysis(void)
+void Command_Analysis::Receive_Data_Analysis(void)//命令分析::接收数据分析
 {
-	switch (FrameID_Analysis()) {
-		//General commamd.
-	case Work_Para: Query_Current_Work_Para();  break;
-	case Set_Group_Num: Set_Group_Number();         break;
-	case SN_Area_Channel: Set_SN_Area_Channel();      break;
-	case Work_Status: Detailed_Work_Status();     break;
-		//Private command.
-	case Work_Limit: Working_Limit_Command();    break;
+	switch (FrameID_Analysis()) //帧ID判断
+	{
+		//General commamd.通用命令
+	case Work_Para:			Query_Current_Work_Para();		break;//工作para:查询当前工作参数
+	case Set_Group_Num:		Set_Group_Number();				break;//设置工作组:设置工作组编号
+	case SN_Area_Channel:	Set_SN_Area_Channel();			break;//SN_区域_路数:设置SN，区域，路数
+	case Work_Status:		Detailed_Work_Status();			break;//工作状态:详细的工作状态
+
+		//Private command.私有命令
+	case Work_Limit:		Working_Limit_Command();		break;//工作时间限制:工作限制命令
 	}
 }
 
@@ -289,14 +295,14 @@ void Command_Analysis::Receive_Data_Analysis(void)
  @para    : None
  @return  : None
  */
-void Command_Analysis::Query_Current_Work_Para(void)
+void Command_Analysis::Query_Current_Work_Para(void)//命令分析::查询当前工作段
 {
 	//  帧头     |    帧ID   |  数据长度   |    设备类型ID   | 群发标志位  |所在执行区域号 | 申号标志 |  查询角色 | 采集时间间隔      |  时间   |  预留位     |  校验码  |     帧尾 
 	//Frame head | Frame ID | Data Length | Device type ID |  mass flag |  Area number | intent   |  channel | collect interval  |  RTC   |   allocate  |  CRC8   |  Frame end
 	//  1 byte       2 byte      1 byte          2 byte        1 byte       1 byte       1 byte      1 byte      2 byte           7 byte      8 byte     1 byte      6 byte
-	if (g_Access_Network_Flag == false)  return;  //Unregistered to server, ignored.
+	if (g_Access_Network_Flag == false)  return;  //Unregistered to server, ignored.//未注册到服务器，被忽略
 
-	if (Verify_Frame_Validity(4, 23, true, false) == true)
+	if (Verify_Frame_Validity(4, 23, true, false) == true)//验证帧的有效性
 	{
 		Private_RTC.Update_RTC(&g_Receive_cmd[12]);
 
