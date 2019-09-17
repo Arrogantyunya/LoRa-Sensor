@@ -119,7 +119,8 @@ void Command_Analysis::Receive_LoRa_Cmd(void)
 Frame_ID Command_Analysis::FrameID_Analysis(void)
 {
 	unsigned int frame_id = ((g_Receive_cmd[1] << 8) | g_Receive_cmd[2]);
-	switch (frame_id) {
+	switch (frame_id) 
+	{
 	case 0xA011: return Work_Para;       break;
 	case 0xA012: return Set_Group_Num;   break;
 	case 0xA013: return SN_Area_Channel; break;
@@ -279,13 +280,13 @@ void Command_Analysis::Receive_Data_Analysis(void)//命令分析::接收数据�
 	switch (FrameID_Analysis()) //帧ID判断
 	{
 		//General commamd.通用命令
-	case Work_Para:			Query_Current_Work_Para();		break;//工作para:查询当前工作参数
-	case Set_Group_Num:		Set_Group_Number();				break;//设置工作组:设置工作组编号
-	case SN_Area_Channel:	Set_SN_Area_Channel();			break;//SN_区域_路数:设置SN，区域，路数
-	case Work_Status:		Detailed_Work_Status();			break;//工作状态:详细的工作状态
+	case Work_Para:			Query_Current_Work_Para();		break;//工作para:查询当前工作参数A011
+	case Set_Group_Num:		Set_Group_Number();				break;//设置工作组:设置工作组编号A012
+	case SN_Area_Channel:	Set_SN_Area_Channel();			break;//SN_区域_路数:设置SN，区域，路数A013
+	case Work_Status:		Detailed_Work_Status();			break;//工作状态:详细的工作状态A014
 
 		//Private command.私有命令
-	case Work_Limit:		Working_Limit_Command();		break;//工作时间限制:工作限制命令
+	case Work_Limit:		Working_Limit_Command();		break;//工作时间限制:工作限制命令A022
 	}
 }
 
