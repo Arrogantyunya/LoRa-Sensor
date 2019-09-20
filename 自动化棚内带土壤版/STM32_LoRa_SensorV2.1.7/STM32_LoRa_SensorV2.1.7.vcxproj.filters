@@ -122,13 +122,13 @@
     <ClCompile Include="SoftwareI2C.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="User_Clock.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="User_CRC8.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MAX44009\i2c.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User_Clock.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

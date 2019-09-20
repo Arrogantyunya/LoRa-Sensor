@@ -86,7 +86,7 @@ void EEPROM_Operations::EEPROM_Write_Enable(void)
  */
 bool SN_Operations::Save_SN_Code(unsigned char *sn_code)
 {
-	EEPROM_Write_Enable();
+	EEPROM_Write_Enable();//写使能引脚开启
 	for (unsigned char i = 0; i < 9; i++)
 		AT24CXX_WriteOneByte(SN_BASE_ADDR + i, sn_code[i]);
 

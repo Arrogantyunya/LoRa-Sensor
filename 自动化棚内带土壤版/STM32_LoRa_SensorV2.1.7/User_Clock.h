@@ -69,6 +69,9 @@ extern "C"
 
 // number of seconds since 0 hrs, 0 minutes, 0 seconds, on the
 // 1st of January 2000 UTC
+	//0小时后的秒数，0分，0秒
+	//2000年1月1日协调世界时
+
 typedef U32 UTCTime;
 
 // To be used with
@@ -93,36 +96,38 @@ typedef struct
 
   /*
    * Updates the OSAL clock and Timers from the MAC 320us timer tick.
+   * 更新操作系统时钟和定时器从MAC 320us定时器滴答。
    */
   extern void osalTimeUpdate( void );
 
   /*
-   * Set the new time.  This will only set the seconds portion
-   * of time and doesn't change the factional second counter.
-   *     newTime - number of seconds since 0 hrs, 0 minutes,
-   *               0 seconds, on the 1st of January 2000 UTC
+   * Set the new time.  This will only set the seconds portion of time and doesn't change the factional second counter.
+   *设定新的时间。这将只设置秒的时间部分，而不改变派系秒计数器。
+   *     newTime - number of seconds since 0 hrs, 0 minutes,0 seconds, on the 1st of January 2000 UTC
+   *新时间- 2000协调世界时1月1日0小时后的秒数，0分，0秒
    */
   extern void osal_setClock( UTCTime newTime );
 
   /*
-   * Gets the current time.  This will only return the seconds
-   * portion of time and doesn't include the factional second counter.
-   *     returns: number of seconds since 0 hrs, 0 minutes,
-   *              0 seconds, on the 1st of January 2000 UTC
+   * Gets the current time.  This will only return the seconds portion of time and doesn't include the factional second counter.
+   * 获取当前时间。这将只返回秒的时间部分，不包括派系秒计数器。
+   * returns: number of seconds since 0 hrs, 0 minutes,0 seconds, on the 1st of January 2000 UTC
+   * 返回:自协调世界时2000年1月1日起0小时、0分、0秒后的秒数
    */
   extern UTCTime osal_getClock( void );
 
   /*
    * Converts UTCTime to UTCTimeStruct
+   * 将UTCTime转换为UTCTimeStruct
    *
-   * secTime - number of seconds since 0 hrs, 0 minutes,
-   *          0 seconds, on the 1st of January 2000 UTC
+   * secTime - number of seconds since 0 hrs, 0 minutes,0 seconds, on the 1st of January 2000 UTC
    * tm - pointer to breakdown struct
    */
   extern void osal_ConvertUTCTime( UTCTimeStruct *tm, UTCTime secTime );
 
   /*
    * Converts UTCTimeStruct to UTCTime (seconds since 00:00:00 01/01/2000)
+   * 将UTCTimeStruct转换为UTCTime(从00:00:00 01/01/2000开始的秒)
    *
    * tm - pointer to UTC time struct
    */

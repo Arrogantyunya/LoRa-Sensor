@@ -312,7 +312,7 @@ void Command_Analysis::Query_Current_Work_Para(void)//命令分析::查询当前
 			g_Get_Para_Flag = true;
 
 
-		if (g_Receive_cmd[8] == 0X55)
+		if (g_Receive_cmd[8] == 0x55)
 			Message_Receipt.Report_General_Parameter();
 		else
 			Message_Receipt.General_Receipt(SetWorkParaOK, 1);
@@ -374,13 +374,13 @@ void Command_Analysis::Set_SN_Area_Channel(void)
 			{
 				Serial.println("Save area number success... <Set_SN_Area_Channel>");
 
-				Message_Receipt.General_Receipt(SetSnAndSlaverCountOk, 1);
+				Message_Receipt.General_Receipt(SetSnAndSlaverCountOk, 1);//收到消息的回执，设置成功
 				SN.Set_SN_Access_Network_Flag();
 			}
 			else
 			{
 				Serial.println("Save area number ERROR !!! <Set_SN_Area_Channel>");
-				Set_Motor_Status(STORE_EXCEPTION);
+				Set_Motor_Status(STORE_EXCEPTION); //存储异常
 				Message_Receipt.General_Receipt(SetSnAndSlaverCountErr, 1);
 			}
 		}
