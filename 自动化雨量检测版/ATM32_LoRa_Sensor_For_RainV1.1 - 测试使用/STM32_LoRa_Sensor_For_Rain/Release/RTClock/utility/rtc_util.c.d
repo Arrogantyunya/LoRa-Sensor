@@ -1,4 +1,4 @@
-C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\RTClock\utility\rtc_util.c.o: \
+C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\RTClock\utility\rtc_util.c.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src\utility\rtc_util.c \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src\utility\rtc_util.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/include/libmaple/libmaple.h \

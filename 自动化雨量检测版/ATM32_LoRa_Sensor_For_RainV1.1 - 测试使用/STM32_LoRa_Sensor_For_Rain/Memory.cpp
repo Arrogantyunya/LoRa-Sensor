@@ -288,7 +288,7 @@ bool SN_Operations::Set_SN_Access_Network_Flag(void)
 bool SN_Operations::Clear_SN_Access_Network_Flag(void)
 {
     if (digitalRead(K1) == LOW){
-        delay(1000);
+        delay(5000);
         iwdg_feed();
         if (digitalRead(K1) == LOW){
             EEPROM_Write_Enable();

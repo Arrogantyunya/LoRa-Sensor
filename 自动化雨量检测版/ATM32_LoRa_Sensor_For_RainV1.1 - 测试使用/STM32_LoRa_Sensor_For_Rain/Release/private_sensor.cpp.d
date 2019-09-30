@@ -1,6 +1,6 @@
-C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\private_sensor.cpp.o: \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\private_sensor.cpp \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\private_sensor.h \
+C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\private_sensor.cpp.o: \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\private_sensor.cpp \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\private_sensor.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/wirish.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/WString.h \
@@ -28,7 +28,7 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\st
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/stm32f1/include/series/nvic.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/include/libmaple/adc.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/stm32f1/include/series/adc.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103c/board/board.h \
+ C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103r/board/board.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/io.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/bit_constants.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/pwm.h \
@@ -50,12 +50,12 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\st
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/WCharacter.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/tone.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/Arduino.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103c/variant.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\RS485.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\MODBUS_RTU_CRC16.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\MAX44009/i2c_MAX44009.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\MAX44009/i2c.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\MAX44009/../SoftwareI2C.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\MAX44009/i2c_Sensor.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\SHT1x.h \
+ C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103r/variant.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\RS485.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\MODBUS_RTU_CRC16.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\MAX44009/i2c_MAX44009.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\MAX44009/i2c.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\MAX44009/../SoftwareI2C.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\MAX44009/i2c_Sensor.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\SHT1x.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/include/libmaple/iwdg.h

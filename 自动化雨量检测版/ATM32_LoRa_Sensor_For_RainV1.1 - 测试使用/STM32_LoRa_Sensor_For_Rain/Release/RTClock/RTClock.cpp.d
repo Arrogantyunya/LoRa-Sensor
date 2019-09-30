@@ -1,4 +1,4 @@
-C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\RTClock\RTClock.cpp.o: \
+C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\RTClock\RTClock.cpp.o: \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src\RTClock.cpp \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src\RTClock.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src/utility/rtc_util.h \

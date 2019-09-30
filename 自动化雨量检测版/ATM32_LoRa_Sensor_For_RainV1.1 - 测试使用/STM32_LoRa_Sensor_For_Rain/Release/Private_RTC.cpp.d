@@ -1,7 +1,7 @@
-C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\Private_RTC.cpp.o: \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\Private_RTC.cpp \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\Private_RTC.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\User_Clock.h \
+C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\Private_RTC.cpp.o: \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\Private_RTC.cpp \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\Private_RTC.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\User_Clock.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src/RTClock.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\libraries\RTClock\src/utility/rtc_util.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/include/libmaple/libmaple.h \
@@ -34,7 +34,7 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\st
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/stm32f1/include/series/timer.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/include/libmaple/adc.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\system/libmaple/stm32f1/include/series/adc.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103c/board/board.h \
+ C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103r/board/board.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/io.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/bit_constants.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/pwm.h \
@@ -56,9 +56,9 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\st
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/WCharacter.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/tone.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/Arduino.h \
- C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103c/variant.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\Memory.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\AT24CXX.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\private_i2c.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\public.h \
- C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Release\private_sensor.h
+ C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\variants\generic_stm32f103r/variant.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\Memory.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\AT24CXX.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\private_i2c.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\public.h \
+ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103R\Release\private_sensor.h
