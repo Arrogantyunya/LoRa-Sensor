@@ -95,13 +95,15 @@ void Command_Analysis::Receive_LoRa_Cmd(void)
 			Serial1.println("Get frame end... <Receive_LoRa_Cmd>");
 		}
 	}
-	if (Receive_end_flag == true) {
+	if (Receive_end_flag == true) 
+	{
 		Serial1.println("Parsing LoRa command... <Receive_LoRa_Cmd>");
 		Receive_end_flag = false;
 		Receive_Data_Analysis();
 		g_Receive_Length = 0;
 	}
-	else {
+	else
+	{
 		g_Receive_Length = 0;
 	}
 }
