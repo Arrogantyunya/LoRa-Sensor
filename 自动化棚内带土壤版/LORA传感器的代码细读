@@ -1,4 +1,5 @@
-LORA传感器的代码细读：
+
+ LORA传感器的代码细读：
 1.初始化串口、LORA、RS485的波特率
 2.初始化备份寄存器
 3.设置USB使能引脚，LED的红绿引脚，按键引脚，模拟量（电压）输入引脚的pinMode
@@ -18,3 +19,37 @@ LORA传感器的代码细读：
 }
 10.查询工作参数Query_Current_Work_Para()中，如果g_Access_Network_Flag == false，则return。
 然后验证帧的有效性，Verify_Frame_Validity(4, 23, true, false)
+
+
+
+unsigned char date_temp[7];
+	Private_RTC.Get_RTC(&date_temp[0]);
+	for (unsigned char i = 0; i < 7; i++)
+		Sensor_Buffer[Receipt_Length++] = date_temp[i];
+
+
+
+
+
+unsigned char time_RTC[7] = { 20,19,10,11,18,54,30 };
+		unsigned char time_RTC1[7];
+		int Receipt_Length = 0;
+
+		Private_RTC.Update_RTC(&time_RTC[0]);
+
+		unsigned char date_temp[7];
+		Private_RTC.Get_RTC(&date_temp[0]);
+		for (unsigned char i = 0; i < 7; i++)
+		{
+			time_RTC1[Receipt_Length++] = date_temp[i];
+			Serial.println(time_RTC1[i]);
+		}
+
+
+
+
+
+
+
+
+

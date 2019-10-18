@@ -13,7 +13,7 @@
 
 #ifndef _VSARDUINO_H_
 #define _VSARDUINO_H_
-#define DEBUG_LEVEL DEBUG_FAULT
+#define DEBUG_LEVEL DEBUG_NONE
 #define BOARD_generic_stm32f103c
 #define VECT_TAB_ADDR 0x8000000
 #define ERROR_LED_PORT GPIOB
@@ -53,6 +53,6 @@ typedef bool _Bool;
 #include <board.cpp> 
 #undef cli
 #define cli()
-#include "STM32_LoRa_Sensor_For_Rain.ino"
+#include "STM32_LoRa_SensorV2.1.9.ino"
 #endif
 #endif
