@@ -179,7 +179,7 @@ void Sensor::Read_Solid_Humi_and_Temp(float *humi, unsigned int *temp, unsigned 
 void Sensor::Read_Soild_PH(unsigned int * Solid_PH, unsigned char addr)
 {
 #if ST_500_Soil_PH
-	unsigned char Send_Cmd[8] = { 0x02, 0x03, 0x00, 0x08, 0x00, 0x01,0x00,0x00 };//01 03 0008 0001 05C8
+	unsigned char Send_Cmd[8] = { 0x02, 0x03, 0x00, 0x08, 0x00, 0x01,0x00,0x00 };//02 03 0008 0001 05C8
 #else
 	unsigned char Send_Cmd[8] = { 0x01, 0x03, 0x00, 0x14, 0x00, 0x02, 0x00, 0x00 };
 #endif
@@ -197,7 +197,7 @@ void Sensor::Read_Soild_PH(unsigned int * Solid_PH, unsigned char addr)
 	RS485_Serial.write(Send_Cmd, 8);
 	delay(100);
 
-	while (RS485_Serial.available() > 0)//01 03 02 0033 F851就是0x33 = 5.1
+	while (RS485_Serial.available() > 0)//02 03 02 0033 F851就是0x33 = 5.1
 	{
 		Receive_Data[Length++] = RS485_Serial.read();
 		if (Length >= 8)

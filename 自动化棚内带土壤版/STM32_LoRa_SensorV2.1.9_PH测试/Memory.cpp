@@ -617,6 +617,7 @@ unsigned char Control_Information::Read_Roll_Report_Status_Interval_Value(void)
 
 /*
  *brief     : Save Received collect time from gateway to EEPROM. If it is the same as that already stored, it is not saved
+ 保存接收到的从网关到EEPROM的收集时间。如果它与已存储的相同，则不保存它
  *para      : collect time (S)
  *return    : true or false
  */
@@ -644,7 +645,7 @@ bool Work_Parameter_Information::Save_Collect_Time(unsigned int time)
 }
 
 /*
- *brief     : Read collect time from EEPROM
+ *brief     : Read collect time from EEPROM阅读从EEPROM收集时间
  *para      : None
  *return    : collect time (S)
  */
@@ -654,13 +655,13 @@ unsigned int Work_Parameter_Information::Read_Collect_Time(void)
 }
 
 /*
- *brief     : Verify that the collect time has been stored.
+ *brief     : Verify that the collect time has been stored.验证收集时间已被存储
  *para      : None.
  *return    : true or false.
  */
 bool Work_Parameter_Information::Verify_Collect_Time_Flag(void)
 {
-    if (AT24CXX_ReadOneByte(COLLECT_TIME_FLAG_ADDR) == 0x55)
+    if (AT24CXX_ReadOneByte(COLLECT_TIME_FLAG_ADDR) == 0x55)//收集时间标志地址
         return true;
     else
         return false;

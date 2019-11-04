@@ -78,22 +78,29 @@ void setup()
 
 	Data_Communication_with_Gateway();
 
-	//if (Some_Peripheral.Get_Voltage() >= 3200)
-	//	LowBalFlag = false;
-	//else
-	//	LowBalFlag = true;  //如果电压小于3200mV
+	if (Some_Peripheral.Get_Voltage() >= 3200)
+	{
+		LowBalFlag = false;
+		Serial.println("LowBalFlag = false");
+	}
+		
+	else
+	{
+		LowBalFlag = true;  //如果电压小于3200mV
+		Serial.println("LowBalFlag = true");
+	}
 
-	//Private_RTC.Set_Alarm();
+	Private_RTC.Set_Alarm();
 }
 
 void loop()
 {
-	//Sleep();
-	USB_ON; //Turn on the USB enable
-	delay(10);
-	setup();
-	Serial.println("ddddddd");
-	delay(1000);
+	Sleep();
+	//USB_ON; //Turn on the USB enable
+	//delay(10);
+	//setup();
+	//Serial.println("ddddddd");
+	//delay(1000);
 }
 
 /*
