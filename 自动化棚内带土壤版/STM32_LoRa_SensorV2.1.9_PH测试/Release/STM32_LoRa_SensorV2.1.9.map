@@ -3547,74 +3547,74 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000    0x35885
+.debug_info     0x00000000    0x35887
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000     0x1a05 STM32_LoRa_SensorV2.1.9.cpp.o
  .debug_info    0x00001a05      0x2a1 User_Clock.c.o
  .debug_info    0x00001ca6      0x574 AT24CXX.cpp.o
  .debug_info    0x0000221a      0x744 BCD_CON.cpp.o
  .debug_info    0x0000295e     0x175d Command_Analysis.cpp.o
- .debug_info    0x000040bb     0x1320 fun_periph.cpp.o
- .debug_info    0x000053db     0x19af LoRa.cpp.o
- .debug_info    0x00006d8a     0x2109 Memory.cpp.o
- .debug_info    0x00008e93      0xa7d private_i2c.cpp.o
- .debug_info    0x00009910     0x21df Private_RTC.cpp.o
- .debug_info    0x0000baef     0x2397 private_sensor.cpp.o
- .debug_info    0x0000de86      0x267 public.cpp.o
- .debug_info    0x0000e0ed     0x2027 receipt.cpp.o
- .debug_info    0x00010114      0xd8e SHT1x.cpp.o
- .debug_info    0x00010ea2      0xef7 SoftwareI2C.cpp.o
- .debug_info    0x00011d99       0xad User_CRC8.cpp.o
- .debug_info    0x00011e46      0x9c3 RTClock\RTClock.cpp.o
- .debug_info    0x00012809      0xf1e RTClock\utility\rtc_util.c.o
- .debug_info    0x00013727      0xf54 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\board.cpp.o
- .debug_info    0x0001467b     0x142d C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\boards.cpp.o
- .debug_info    0x00015aa8     0x10d1 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\boards_setup.cpp.o
- .debug_info    0x00016b79       0xb1 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\start.S.o
- .debug_info    0x00016c2a      0x176 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\start_c.c.o
- .debug_info    0x00016da0      0x5cd C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\syscalls.c.o
- .debug_info    0x0001736d       0xa1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(exc.S.o)
- .debug_info    0x0001740e       0xb6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(isrs.S.o)
- .debug_info    0x000174c4      0x79a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(adc.c.o)
- .debug_info    0x00017c5e      0xe4a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(adc_f1.c.o)
- .debug_info    0x00018aa8      0x4d1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(bkp_f1.c.o)
- .debug_info    0x00018f79      0x128 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(flash.c.o)
- .debug_info    0x000190a1      0x6d6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(gpio_f1.c.o)
- .debug_info    0x00019777      0x5a2 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(nvic.c.o)
- .debug_info    0x00019d19      0x5fc C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(pwr.c.o)
- .debug_info    0x0001a315      0x556 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(rcc.c.o)
- .debug_info    0x0001a86b      0xbdb C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(rcc_f1.c.o)
- .debug_info    0x0001b446      0x182 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(systick.c.o)
- .debug_info    0x0001b5c8     0x1b44 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(timer.c.o)
- .debug_info    0x0001d10c      0xbd8 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart_f1.c.o)
- .debug_info    0x0001dce4      0x5a9 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart_private.c.o)
- .debug_info    0x0001e28d      0xae6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(util.c.o)
- .debug_info    0x0001ed73     0x2a36 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(HardwareSerial.cpp.o)
- .debug_info    0x000217a9     0x1ae0 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(HardwareTimer.cpp.o)
- .debug_info    0x00023289       0x99 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(main.cpp.o)
- .debug_info    0x00023322     0x253a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(Print.cpp.o)
- .debug_info    0x0002585c     0x2b1f C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_serial.cpp.o)
- .debug_info    0x0002837b      0xa8a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_analog.cpp.o)
- .debug_info    0x00028e05      0xb17 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_digital.cpp.o)
- .debug_info    0x0002991c      0x20c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_math.cpp.o)
- .debug_info    0x00029b28      0xcb5 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_shift.cpp.o)
- .debug_info    0x0002a7dd      0x221 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_time.cpp.o)
- .debug_info    0x0002a9fe     0x3aa1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(WString.cpp.o)
- .debug_info    0x0002e49f      0xc90 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_digital_f1.cpp.o)
- .debug_info    0x0002f12f       0x33 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(hooks.c.o)
- .debug_info    0x0002f162      0x27c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(itoa.c.o)
- .debug_info    0x0002f3de      0x157 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(dtostrf.c.o)
- .debug_info    0x0002f535      0x313 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(gpio.c.o)
- .debug_info    0x0002f848      0x16b C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(iwdg.c.o)
- .debug_info    0x0002f9b3      0xc47 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart.c.o)
- .debug_info    0x000305fa      0xd89 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb.c.o)
- .debug_info    0x00031383     0x2294 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_cdcacm.c.o)
- .debug_info    0x00033617      0x26c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_reg_map.c.o)
- .debug_info    0x00033883      0xddf C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_core.c.o)
- .debug_info    0x00034662      0x3ed C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_init.c.o)
- .debug_info    0x00034a4f      0x17b C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_mem.c.o)
- .debug_info    0x00034bca      0xc88 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_regs.c.o)
- .debug_info    0x00035852       0x33 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(cxxabi-compat.cpp.o)
+ .debug_info    0x000040bb     0x1321 fun_periph.cpp.o
+ .debug_info    0x000053dc     0x19af LoRa.cpp.o
+ .debug_info    0x00006d8b     0x2109 Memory.cpp.o
+ .debug_info    0x00008e94      0xa7d private_i2c.cpp.o
+ .debug_info    0x00009911     0x21df Private_RTC.cpp.o
+ .debug_info    0x0000baf0     0x2397 private_sensor.cpp.o
+ .debug_info    0x0000de87      0x267 public.cpp.o
+ .debug_info    0x0000e0ee     0x2027 receipt.cpp.o
+ .debug_info    0x00010115      0xd8e SHT1x.cpp.o
+ .debug_info    0x00010ea3      0xef7 SoftwareI2C.cpp.o
+ .debug_info    0x00011d9a       0xad User_CRC8.cpp.o
+ .debug_info    0x00011e47      0x9c3 RTClock\RTClock.cpp.o
+ .debug_info    0x0001280a      0xf1e RTClock\utility\rtc_util.c.o
+ .debug_info    0x00013728      0xf54 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\board.cpp.o
+ .debug_info    0x0001467c     0x142d C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\boards.cpp.o
+ .debug_info    0x00015aa9     0x10d1 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\boards_setup.cpp.o
+ .debug_info    0x00016b7a       0xb1 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\start.S.o
+ .debug_info    0x00016c2b      0x176 C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\start_c.c.o
+ .debug_info    0x00016da1      0x5cd C:\Users\Administrator\AppData\Local\Temp\VMBCore\arduino16x\c59c5c0ffd6eb538bfede5ea77bdbb02\variant\syscalls.c.o
+ .debug_info    0x0001736e       0xa1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(exc.S.o)
+ .debug_info    0x0001740f       0xb6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(isrs.S.o)
+ .debug_info    0x000174c5      0x79a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(adc.c.o)
+ .debug_info    0x00017c5f      0xe4a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(adc_f1.c.o)
+ .debug_info    0x00018aa9      0x4d1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(bkp_f1.c.o)
+ .debug_info    0x00018f7a      0x128 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(flash.c.o)
+ .debug_info    0x000190a2      0x6d6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(gpio_f1.c.o)
+ .debug_info    0x00019778      0x5a2 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(nvic.c.o)
+ .debug_info    0x00019d1a      0x5fc C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(pwr.c.o)
+ .debug_info    0x0001a316      0x556 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(rcc.c.o)
+ .debug_info    0x0001a86c      0xbdb C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(rcc_f1.c.o)
+ .debug_info    0x0001b447      0x182 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(systick.c.o)
+ .debug_info    0x0001b5c9     0x1b44 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(timer.c.o)
+ .debug_info    0x0001d10d      0xbd8 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart_f1.c.o)
+ .debug_info    0x0001dce5      0x5a9 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart_private.c.o)
+ .debug_info    0x0001e28e      0xae6 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(util.c.o)
+ .debug_info    0x0001ed74     0x2a36 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(HardwareSerial.cpp.o)
+ .debug_info    0x000217aa     0x1ae1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(HardwareTimer.cpp.o)
+ .debug_info    0x0002328b       0x99 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(main.cpp.o)
+ .debug_info    0x00023324     0x253a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(Print.cpp.o)
+ .debug_info    0x0002585e     0x2b1f C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_serial.cpp.o)
+ .debug_info    0x0002837d      0xa8a C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_analog.cpp.o)
+ .debug_info    0x00028e07      0xb17 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_digital.cpp.o)
+ .debug_info    0x0002991e      0x20c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_math.cpp.o)
+ .debug_info    0x00029b2a      0xcb5 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_shift.cpp.o)
+ .debug_info    0x0002a7df      0x221 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_time.cpp.o)
+ .debug_info    0x0002aa00     0x3aa1 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(WString.cpp.o)
+ .debug_info    0x0002e4a1      0xc90 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(wirish_digital_f1.cpp.o)
+ .debug_info    0x0002f131       0x33 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(hooks.c.o)
+ .debug_info    0x0002f164      0x27c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(itoa.c.o)
+ .debug_info    0x0002f3e0      0x157 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(dtostrf.c.o)
+ .debug_info    0x0002f537      0x313 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(gpio.c.o)
+ .debug_info    0x0002f84a      0x16b C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(iwdg.c.o)
+ .debug_info    0x0002f9b5      0xc47 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usart.c.o)
+ .debug_info    0x000305fc      0xd89 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb.c.o)
+ .debug_info    0x00031385     0x2294 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_cdcacm.c.o)
+ .debug_info    0x00033619      0x26c C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_reg_map.c.o)
+ .debug_info    0x00033885      0xddf C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_core.c.o)
+ .debug_info    0x00034664      0x3ed C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_init.c.o)
+ .debug_info    0x00034a51      0x17b C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_mem.c.o)
+ .debug_info    0x00034bcc      0xc88 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(usb_regs.c.o)
+ .debug_info    0x00035854       0x33 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_SensorV2.1.9\stm32_genericSTM32F103C\Release/core.a(cxxabi-compat.cpp.o)
 
 .debug_abbrev   0x00000000     0x9b9e
  *(.debug_abbrev)
