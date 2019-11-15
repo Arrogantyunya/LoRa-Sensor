@@ -388,13 +388,15 @@ void Receipt::Send_Sensor_Data(void)
 
 	//Air Temperature空气温度
 	NumOfDot = 2;
-	if (Sensor_Data.g_Temp > 150) {
+	if (Sensor_Data.g_Temp > 150) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
-
 	}
-	else {
-		if (Sensor_Data.g_Temp < 0) {
+	else 
+	{
+		if (Sensor_Data.g_Temp < 0) 
+		{
 			Sensor_Data.g_Temp *= -1;
 			Temperature_Change_Flag = true;
 		}
@@ -413,12 +415,13 @@ void Receipt::Send_Sensor_Data(void)
 	  //Air Humidity空气湿度
 	memset(Data_BCD, 0x00, sizeof(Data_BCD));//清零Data_BCD数组
 	NumOfDot = 2;
-	if ((int)Sensor_Data.g_Humi > 100 || (int)Sensor_Data.g_Humi <= 0) {
+	if ((int)Sensor_Data.g_Humi > 100 || (int)Sensor_Data.g_Humi <= 0) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
-
 	}
-	else {
+	else 
+	{
 		PackBCD((char *)Data_BCD, Sensor_Data.g_Humi, 4, NumOfDot);//把大气湿度转换成BCD码
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[0];
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[1];
@@ -452,7 +455,7 @@ void Receipt::Send_Sensor_Data(void)
 	//Air Pressure气压
 	NumOfDot = 0;
 	memset(Data_BCD, 0x00, sizeof(Data_BCD));
-	PackBCD((char *)Data_BCD, Sensor_Data.g_Solid_PH /10, 4, NumOfDot);
+	PackBCD((char *)Data_BCD, Sensor_Data.g_Solid_PH / 10, 4, NumOfDot);
 
 
 	Sensor_Buffer[Receipt_Length++] = 0x00;
@@ -485,12 +488,14 @@ void Receipt::Send_Sensor_Data(void)
 	NumOfDot = 0;
 	memset(Data_BCD, 0x00, sizeof(Data_BCD));
 
-	if (Sensor_Data.g_UV > 100) {
+	if (Sensor_Data.g_UV > 100) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 
 	}
-	else {
+	else 
+	{
 		PackBCD((char *)Data_BCD, Sensor_Data.g_UV, 4, NumOfDot);
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[0];
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[1];
@@ -509,13 +514,16 @@ void Receipt::Send_Sensor_Data(void)
 
 	//Solid temperature土壤温度
 	NumOfDot = 2;
-	if (Sensor_Data.g_Solid_Temp >= 65535) {
+	if (Sensor_Data.g_Solid_Temp >= 65535) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 
 	}
-	else {
-		if (Sensor_Data.g_Solid_Temp_Flag == 1) {
+	else 
+	{
+		if (Sensor_Data.g_Solid_Temp_Flag == 1) 
+		{
 #if PR_3000_ECTH_N01
 			SoliTemp_Value = (float)(65536 - Sensor_Data.g_Solid_Temp) / 100;
 #else
@@ -523,7 +531,8 @@ void Receipt::Send_Sensor_Data(void)
 #endif
 
 		}
-		else {
+		else 
+		{
 #if PR_3000_ECTH_N01
 			SoliTemp_Value = (float)Sensor_Data.g_Solid_Temp / 100;
 #else
@@ -545,12 +554,14 @@ void Receipt::Send_Sensor_Data(void)
 	memset(Data_BCD, 0x00, sizeof(Data_BCD));//清零Data_BCD数组
 	NumOfDot = 2;
 
-	if ((int)(Sensor_Data.g_Solid_Humi) > 100) {
+	if ((int)(Sensor_Data.g_Solid_Humi) > 100) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 
 	}
-	else {
+	else 
+	{
 		PackBCD((char *)Data_BCD, Sensor_Data.g_Solid_Humi, 4, NumOfDot);//把大气湿度转换成BCD码
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[0];
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[1];
@@ -578,12 +589,14 @@ void Receipt::Send_Sensor_Data(void)
 	NumOfDot = 0;
 	memset(Data_BCD, 0x00, sizeof(Data_BCD));
 
-	if (Sensor_Data.g_Salt >= 65535) {
+	if (Sensor_Data.g_Salt >= 65535) 
+	{
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 		Sensor_Buffer[Receipt_Length++] = 0xFF;
 
 	}
-	else {
+	else 
+	{
 		PackBCD((char *)Data_BCD, Sensor_Data.g_Salt, 4, NumOfDot);
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[0];
 		Sensor_Buffer[Receipt_Length++] = Data_BCD[1];
