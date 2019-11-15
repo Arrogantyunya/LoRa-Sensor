@@ -76,21 +76,6 @@ void setup()
 	Serial.println("SN self_check success...");
 	LED_RUNNING;
 
-
-	//-----极低电压不发送数据
-	if (Some_Peripheral.Get_Voltage() <= 2800)
-	{
-		delay(100);
-		if (Some_Peripheral.Get_Voltage() <= 2800)
-		{
-			Private_RTC.Set_onehour_Alarm();
-
-			Sleep();
-		}
-	}
-	//-----极低电压不发送数据
-
-
 	Data_Communication_with_Gateway();
 
 	if (Some_Peripheral.Get_Voltage() >= 3300)

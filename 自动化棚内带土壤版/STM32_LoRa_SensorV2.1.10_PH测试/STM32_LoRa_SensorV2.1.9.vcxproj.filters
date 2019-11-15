@@ -75,6 +75,9 @@
     <ClInclude Include="__vm\.STM32_LoRa_SensorV2.1.9_PH测试.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="__vm\.STM32_LoRa_SensorV2.1.10_PH测试.vsarduino.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AT24CXX.cpp">

@@ -12,6 +12,7 @@ void Sensor::Get_All_Sensor_Data(void)
 {
     PWR_485_ON;
 
+	delay(100);
     Sensor_Data.g_Temp = sht10.readTemperatureC();
     delay(100);
     Sensor_Data.g_Humi = sht10.readHumidity();

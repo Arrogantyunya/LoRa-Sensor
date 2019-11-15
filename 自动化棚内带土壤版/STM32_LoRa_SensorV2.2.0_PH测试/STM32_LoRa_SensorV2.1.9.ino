@@ -76,18 +76,36 @@ void setup()
 	Serial.println("SN self_check success...");
 	LED_RUNNING;
 
+
+	//-----极低电压不发送数据
+	if (Some_Peripheral.Get_Voltage() <= 2800)
+	{
+		delay(100);
+		if (Some_Peripheral.Get_Voltage() <= 2800)
+		{
+			Private_RTC.Set_onehour_Alarm();
+
+			Sleep();
+		}
+	}
+	//-----极低电压不发送数据
+
+
+
 	Data_Communication_with_Gateway();
 
-	if (Some_Peripheral.Get_Voltage() >= 3200)
+	if (Some_Peripheral.Get_Voltage() >= 3300)
 	{
-		LowBalFlag = false;
-		Serial.println("LowBalFlag = false");
+		LowBalFlag = 0;
 	}
-		
 	else
 	{
-		LowBalFlag = true;  //如果电压小于3200mV
-		Serial.println("LowBalFlag = true");
+		LowBalFlag = 1;  //如果电压小于3200mV大于2900mV
+
+		if (Some_Peripheral.Get_Voltage() <= 3000)
+		{
+			LowBalFlag = 2;//如果电压小于2900mV
+		}
 	}
 
 	Private_RTC.Set_Alarm();
