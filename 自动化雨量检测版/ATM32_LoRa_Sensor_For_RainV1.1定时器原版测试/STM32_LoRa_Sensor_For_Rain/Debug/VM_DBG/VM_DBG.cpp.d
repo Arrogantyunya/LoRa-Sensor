@@ -1,6 +1,6 @@
 C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Debug\VM_DBG\VM_DBG.cpp.o: \
- d:\vs2019\common7\ide\extensions\cpwzuv43.p51\Micro\ Platforms\default\debuggers\VM_DBG\VM_DBG.cpp \
- d:\vs2019\common7\ide\extensions\cpwzuv43.p51\Micro\ Platforms\default\debuggers\VM_DBG\VM_DBG.h \
+ d:\vs2019\common7\ide\extensions\y4ur5orx.hne\Micro\ Platforms\default\debuggers\VM_DBG\VM_DBG.cpp \
+ d:\vs2019\common7\ide\extensions\y4ur5orx.hne\Micro\ Platforms\default\debuggers\VM_DBG\VM_DBG.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/Arduino.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/wirish.h \
  C:\Program\ Files\ (x86)\Arduino\hardware\stm32\STM32F1\cores\maple/WString.h \

@@ -384,7 +384,9 @@ void LoRa::Rewrite_ID(void)
     unsigned char buf[4];
     char addr[9];
     unsigned char i, j = 0;
-    LoRa_MHL9LF.LoRa_AT(buf, true, AT_ADDR_, 0);
+
+	if (!LoRa_MHL9LF.LoRa_AT(buf, true, AT_ADDR_, 0))
+		return;
 
     for (unsigned char i = 0; i < 8; i++)
         i % 2 == 0 ? addr[i] = buf[j] / 16 : addr[i] = buf[j++] % 16;
@@ -452,7 +454,7 @@ void LoRa::Parameter_Init(void)
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_TFREQ, "1C578DE0");
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_RFREQ, "1C03AE80");     
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_RIQ, "00"); 
-    Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_NET, "00"); 
+    Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_NET, "00"); //00节点，01网关
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_TSF, "09"); 
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_RSF, "09"); 
     Bool_Buffer[i++] = LoRa_MHL9LF.LoRa_AT(buffer, false, AT_SIP, "01"); 

@@ -68,11 +68,12 @@ void setup()
 	Vertion.Save_hardware_version(0x00, 0x01);
 #endif
 
-	Key_Reset_LoRa_Parameter();
+	Key_Reset_LoRa_Parameter();//按住按键2重置LORA参数
 
 	//Initialize LoRa parameter.LORA参数初始化
 	if (LoRa_Para_Config.Verify_LoRa_Config_Flag() == false)
 	{
+		digitalWrite(RED_PIN, HIGH);
 		LoRa_MHL9LF.Rewrite_GroupID();
 		LoRa_MHL9LF.Rewrite_ID();
 		LoRa_MHL9LF.Parameter_Init();
@@ -80,12 +81,13 @@ void setup()
 		LoRa_MHL9LF.Mode(PASS_THROUGH_MODE);
 		LoRa_Command_Analysis.Receive_LoRa_Cmd();
 		LoRa_Para_Config.Save_LoRa_Config_Flag();
+		digitalWrite(RED_PIN, LOW);
 	}
 
 	iwdg_feed();
 
-	SN.Clear_SN_Access_Network_Flag();
-	Request_Access_Network();
+	SN.Clear_SN_Access_Network_Flag();//按住按键1清号
+	Request_Access_Network();//按住按键1重新申号
 
 	while (SN.Self_Check(g_SN_Code) == false)
 	{
@@ -112,6 +114,8 @@ void loop()
 {
 	iwdg_feed();
 
+	//Data_Communication_with_Gateway();
+
 	private_sensor.Detect_Rain();
 
 	//这里是得到电平的反转（雨量传感器的检测到晴天或雨天），然后开始发送新的实时数据
@@ -131,7 +135,7 @@ void loop()
 		Timer2.setCount(0);//设置当前计时器计数
 		Timer2.resume();//在不影响其配置的情况下恢复暂停的计时器
 	}
-	//Serial1.println("//////////");
+	Serial1.println("//////////");
 }
 
 /*

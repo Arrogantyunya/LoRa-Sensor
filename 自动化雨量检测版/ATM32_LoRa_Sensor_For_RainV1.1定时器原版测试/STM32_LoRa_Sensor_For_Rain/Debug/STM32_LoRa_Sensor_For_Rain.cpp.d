@@ -66,4 +66,4 @@ C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\st
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Debug\fun_periph.h \
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Debug\private_sensor.h \
  C:\Users\Administrator\AppData\Local\Temp\VMBuilds\STM32_LoRa_Sensor_For_Rain\stm32_genericSTM32F103C\Debug\receipt.h \
- d:\vs2019\common7\ide\extensions\cpwzuv43.p51\Micro\ Platforms\default\debuggers\VM_DBG/VM_DBG.h
+ d:\vs2019\common7\ide\extensions\y4ur5orx.hne\Micro\ Platforms\default\debuggers\VM_DBG/VM_DBG.h

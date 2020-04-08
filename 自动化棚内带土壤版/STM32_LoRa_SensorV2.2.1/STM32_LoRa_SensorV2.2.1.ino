@@ -49,7 +49,7 @@ void setup()
 	Vertion.Save_hardware_version(0x00, 0x01);
 #endif
 
-	Key_Reset_LoRa_Parameter();//先按按键1，在按按键2
+	Key_Reset_LoRa_Parameter();//按键2重置LORA参数
 
 	//Initialize LoRa parameter.
 	if (LoRa_Para_Config.Verify_LoRa_Config_Flag() == false)
@@ -61,8 +61,8 @@ void setup()
 		LoRa_Para_Config.Save_LoRa_Config_Flag();
 	}
 
-	SN.Clear_SN_Access_Network_Flag();
-	Request_Access_Network();//按下按键1
+	SN.Clear_SN_Access_Network_Flag();//按下按键1清号
+	Request_Access_Network();//按下按键1申号
 
 	while (SN.Self_Check(g_SN_Code) == false)
 	{
@@ -91,8 +91,8 @@ void setup()
 	//-----极低电压不发送数据
 
 
+	Data_Communication_with_Gateway();//数据发送至网关
 
-	Data_Communication_with_Gateway();
 
 	if (Some_Peripheral.Get_Voltage() >= 3300)
 	{
@@ -199,6 +199,7 @@ void Data_Communication_with_Gateway(void)
 void Sleep(void)
 {
 	Serial.println("Enter Sleep>>>>>>");
+	Serial.flush();
 	Some_Peripheral.Stop_LED();
 	PWR_485_OFF;
 	LORA_PWR_OFF;
@@ -211,13 +212,11 @@ void Sleep(void)
 
 void Key_Reset_LoRa_Parameter(void)
 {
-	if (digitalRead(K1) == LOW) {
+	if (digitalRead(K2) == LOW) {
 		delay(100);
-		if (digitalRead(K1) == LOW) {
+		if (digitalRead(K2) == LOW) {
 			//Some_Peripheral.Key_Buzz(600);
-			delay(2500);
-			Serial.println("K1释放，K2按下");
-			delay(2500);
+			delay(5000);
 			if (digitalRead(K2) == LOW) {
 				delay(100);
 				if (digitalRead(K2) == LOW) {
